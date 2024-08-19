@@ -1,4 +1,8 @@
-import MapContainer from "@/components/LeafletMap";
+import dynamic from "next/dynamic";
+
+const MapContainer = dynamic(() => import("@/components/LeafletMap"), {
+  ssr: false, // This prevents the component from being rendered on the server
+});
 
 export default function ToDo() {
   return (

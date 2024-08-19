@@ -19,7 +19,7 @@ export default function AddTopic({ onClose }) {
     }
 
     try {
-      const res = await fetch("http://localhost:3000/api/topics", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/topics`, {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -40,7 +40,7 @@ export default function AddTopic({ onClose }) {
   };
 
   return (
-    <div className="max-w-2xl px-5 mx-auto">
+    <div className="max-w-2xl">
       <h1 className="text-slate-300 font-bold text-2xl text-center mb-4">
         ADD
       </h1>

@@ -3,7 +3,7 @@ import PopupU from "@/components/PopUpU";
 
 const getTopics = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/topics", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/topics`, {
       cache: "no-store",
     });
 
@@ -11,14 +11,23 @@ const getTopics = async () => {
       throw new Error("Failed to fetch topics");
     }
 
-    return res.json();
+    const data = await res.json();
+    return data; // Ensure we return the entire data object
   } catch (error) {
     console.log("Error loading topics: ", error);
+    return null; // Return null in case of error
   }
 };
 
 export default async function TopicsList() {
-  const { topics } = await getTopics();
+  const data = await getTopics();
+
+  // If data is null or topics is not found, return a fallback UI
+  if (!data || !data.topics) {
+    return <div className="text-center text-white">No topics available.</div>;
+  }
+
+  const { topics } = data;
 
   return (
     <>
