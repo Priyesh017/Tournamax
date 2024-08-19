@@ -24,7 +24,7 @@ export default async function TopicsList() {
 
   // If data is null or topics is not found, return a fallback UI
   if (!data || !data.topics) {
-    return <div className="text-center text-white">No topics available.</div>;
+    return <div className="text-center text-gray-300 py-5">No topics available.</div>;
   }
 
   const { topics } = data;
