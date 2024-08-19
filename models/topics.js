@@ -2,11 +2,17 @@ import mongoose, { Schema } from "mongoose";
 
 const topicSchema = new Schema(
   {
-    title: String,
-    description: String,
+    title: {
+      type: String,
+      required: true, // Ensures the title is required
+    },
+    description: {
+      type: String,
+      required: true, // Ensures the description is required
+    },
   },
   {
-    timestamps: true,
+    timestamps: true, // Adds createdAt and updatedAt fields
   }
 );
 
