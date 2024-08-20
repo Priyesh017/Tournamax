@@ -10,7 +10,7 @@ export default function RemoveBtn({ id }) {
 
     if (confirmed) {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/topics?id=${id}`,
+        `/api/topics?id=${id}`,
         {
           method: "DELETE",
         }
