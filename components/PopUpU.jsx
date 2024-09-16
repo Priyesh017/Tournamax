@@ -17,7 +17,7 @@ export default function PopupU({ id }) {
 
   return (
     <div>
-      <div className="p-2 rounded text-gray-600 hover:text-gray-300">
+      <div className="p-2 rounded text-gray-300 hover:text-gray-600">
         <HiPencilAlt size={24} onClick={handleOpenModal} />
       </div>
 

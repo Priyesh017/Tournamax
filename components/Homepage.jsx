@@ -1,23 +1,16 @@
-import Link from "next/link";
+import Navbar from "./Navbar";
+import TopicsList from "./TopicList";
 
-export default function Homepage() {
+export default function ToDo() {
   return (
-    <div>
-      <h1 className="text-center text-gray-400 text-4xl">
-        Welcome to my Next.js project!
-      </h1>
-      <div className="flex flex-col items-center mt-40 gap-10">
-        <Link href="/todoList">
-          <button className="text-violet-700 py-2 px-4 rounded border-2 border-violet-700 hover:bg-violet-700 hover:text-white">
-            Here is my To-Do List
-          </button>
-        </Link>
-        <Link href="/reactLeaflet">
-          <button className="text-violet-700 py-2 px-4 rounded border-2 border-violet-700 hover:bg-violet-700 hover:text-white">
-            Here is my React-Leaflet
-          </button>
-        </Link>
+    <>
+      <div className="max-w-3xl mx-auto p-4">
+        <h1 className="text-center text-3xl my-5 font-bold text-gray-300">
+          Welcome to To-Do Keep!
+        </h1>
+        <Navbar />
+        <TopicsList />
       </div>
-    </div>
+    </>
   );
 }
