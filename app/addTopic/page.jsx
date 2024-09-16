@@ -28,7 +28,7 @@ export default function AddTopic({ onClose }) {
       });
 
       if (res.ok) {
-        router.push("/todoList");
+        router.push("/");
         router.refresh();
         onClose(); // Close the popup after successful submission
       } else {
